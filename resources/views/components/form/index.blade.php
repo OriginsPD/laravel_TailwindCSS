@@ -1,14 +1,30 @@
 @props([
-    'title' => false,
-    'grid' => 2
+    'alpName' => false,
+    'grid' => 2,
+    'class' => false
 ])
 
-<section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
-    <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">{{ $title }}</h2>
+@php
+
+$classDefault = ' p-8 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800 ';
+
+$classDefault .= ($class ?? false)
+                 ? $class
+                 : ''
+
+@endphp
+
+<section x-data="{ {{ $alpName }}: true }"
+         x-on:show-modal.window="{{ $alpName }} = false"
+         x-on:close-modal.window="{{ $alpName }} = true"
+
+         class="{{ $classDefault }}">
+
+    {{ $title }}
 
     <form {{ $attributes }}>
 
-        <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-{{ $grid }}">
+        <div class="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-{{ $grid }}">
 
             {{ $slot }}
 

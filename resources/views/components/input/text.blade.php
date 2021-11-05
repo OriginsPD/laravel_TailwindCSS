@@ -14,7 +14,7 @@
                         focus:ring-offset-gray-300";
 
 if($error){
-    $classes .= ' border-red-300 ';
+    $classes .= ' border-red-500 border-3 ';
 }
 
 @endphp
@@ -26,7 +26,7 @@ if($error){
 
     @if($error)
 
-        <span class="text-red-900 text-xs italic  m-1">
+        <span class="text-red-500 text-xs italic  m-1">
 
             * {{ $error }}
 

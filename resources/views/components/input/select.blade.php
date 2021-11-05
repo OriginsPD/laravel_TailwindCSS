@@ -1,7 +1,8 @@
 @props([
     'error' => false,
     'option' => false,
-    'field' => false
+    'field' => false,
+    'keyType' => false
 ])
 
 @php
@@ -30,7 +31,17 @@ if($error){ $classes .= 'border-red-300'; }
 
             @forelse($option as $key => $label)
 
-                <option value="{{ $key }}"> {{ $label->$field }} </option>
+                @if($keyType)
+
+                    <option value="{{ $label->$field }}"> {{ $label->$field }} </option>
+
+
+                @else
+
+                    <option value="{{ $key }}"> {{ $label->$field }} </option>
+
+
+                @endif
 
             @empty
 

@@ -1,5 +1,6 @@
 @props([
     'message' => false,
+    'alpName' => false,
     'status' => false
 ])
 
@@ -9,9 +10,13 @@
 
 @endphp
 
-<div class="w-full text-white {{ $theme }}">
+<div x-data="{ {{ $alpName }}: true }"
+     x-on:show-alert.window="{{ $alpName }} = false"
+     x-on:close-alert.window="{{ $alpName }} = true"
+    class="w-full text-white {{ $theme }}">
 
-    <div class="container flex items-center justify-between px-6 py-4 mx-auto">
+    <div x-show="{{ $alpName}}"
+        class="container flex items-center justify-between px-4 py-2 mx-auto">
 
         <div class="flex">
 
