@@ -1,5 +1,5 @@
 @props([
-    'class' => false
+    'class' => false,
 ])
 
 @php

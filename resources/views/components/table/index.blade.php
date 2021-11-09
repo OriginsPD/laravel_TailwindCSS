@@ -1,9 +1,9 @@
 @props([
     'title' => false,
-    'useBtn' => false
+    'useBtn' => false,
 ])
 
-<div class="w-full border border-red-700 xl:w-8/12 xl:mb-0 px-4 mx-auto mt-12">
+<div class="xl:w-8/12 xl:mb-0 px-4 mx-auto mt-12 w-10/12">
 
     <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
 
