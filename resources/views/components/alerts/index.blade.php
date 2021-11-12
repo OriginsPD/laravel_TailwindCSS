@@ -4,33 +4,38 @@
     'status' => false
 ])
 
+
 @php
 
-    $theme = ($status ?? false) ? 'bg-red-500' : 'bg-green-500'
+$theme = ($status) ? 'red' : 'green'
 
 @endphp
 
-<div x-data="{ {{ $alpName }}: true }"
-     x-on:show-alert.window="{{ $alpName }} = false"
-     x-on:close-alert.window="{{ $alpName }} = true"
-    class="w-full text-white {{ $theme }}">
 
-    <div x-show="{{ $alpName}}"
-        class="container flex items-center justify-between px-4 py-2 mx-auto">
+<div x-data="{ Alert: false }"
+     x-on:show-alert.window="Alert = true; setTimeout(() => { Alert = false },2500)"
 
-        <div class="flex">
+     :class="Alert ? '-translate-x-0' : 'translate-x-full'"
+    class="w-auto fixed z-20 top-20 transform transition duration-300 right-0 rounded-l-2xl text-white h-16 bg-white  shadow-2xl">
+
+    <div
+         x-transition.duration.300ms.origin.right
+         x-transition.out.duration.300ms.opacity.origin.right
+        class="container flex items-center  justify-between px-4 py-2 mx-auto">
+
+        <div class="flex items-center justify-center inset-0">
 
             @if($status)
 
-                <i class="fas fa-exclamation-triangle mt-0.5"></i>
+                <i class="fas fa-exclamation-triangle text-red-600 my-4"></i>
 
             @else
 
-                <i class="fas fa-shield-check mt-0.5"></i>
+                <i class="fas fa-shield-check text-green-600 my-4"></i>
 
             @endif
 
-            <p class="mx-3 my-auto">{{ $message }}</p>
+            <div class="mx-3 my-auto font-bold w-full text-right my-3.5 text-{{ $theme }}-500 ">{{ $message }}</div>
 
         </div>
 

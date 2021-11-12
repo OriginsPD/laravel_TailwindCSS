@@ -1,5 +1,7 @@
 <!-- component -->
-<div
+<div @keydown.esc.window="isSlide = false"
+<div @keydown.alt.left.window="isSlide = false"
+     @keydown.alt.right.window="isSlide = true"
     :class="isSlide ? 'translate-x-0' : '-translate-x-96'"
     class="md:flex flex-col fixed transform transform ease-in-out duration-300
             border-r border-gray-100 shadow z-30 md:flex-row h-screen">

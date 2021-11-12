@@ -18,7 +18,7 @@
 </head>
 <body class="h-screen antialiased leading-none font-sans">
 
-<div x-data="{ isSlide: false }" >
+<div @click.away="isSlide = false" x-data="{ isSlide: false }" >
 
     @livewire('navigation.admin.header')
 
