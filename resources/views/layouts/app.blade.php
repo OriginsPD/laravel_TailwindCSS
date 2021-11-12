@@ -13,18 +13,22 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css" rel="stylesheet">
-
+    @livewireStyles
 </head>
-<body class="bg-gray-200 h-screen antialiased leading-none font-sans">
-
-
+<body class="h-screen antialiased leading-none font-sans">
 
 <div x-data="{ isSlide: false }">
 
+    @livewire('navigation.admin.header')
 
+    @livewire('navigation.admin.side-bar')
+
+@yield('content')
 
 </div>
 
-</body>
+<!-- Footer End of Body -->
+@livewireScripts
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
 </html>
