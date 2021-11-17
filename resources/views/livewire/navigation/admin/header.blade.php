@@ -27,11 +27,11 @@
             <nav @click.prevent="isSlide = false"
                 class="items-end absolute  right-4 mr-6 justify-end pl-8 ml-8 text-sm font-medium border-l border-gray-100 space-x-2 md:flex">
 
-                <div class="hidden lg:block">
+                <div class="hidden space-x-2 lg:block">
 
                     <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg
 
-                     hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 "
+                     hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 shadow "
 
                        href="#">
 
@@ -43,7 +43,7 @@
 
                     <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg
 
-                     hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 "
+                     hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 shadow "
 
                        href="#">
 
@@ -53,7 +53,7 @@
 
                     <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg
 
-                     hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 "
+                     hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 shadow "
 
                        href="#">
 
@@ -63,7 +63,7 @@
 
                     <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg
 
-                     hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 "
+                     hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 shadow "
 
                        href="#">
 
