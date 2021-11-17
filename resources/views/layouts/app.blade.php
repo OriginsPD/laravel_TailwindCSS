@@ -17,11 +17,11 @@
     <link href='https://unpkg.com/css.gg/icons/all.css' rel='stylesheet'>
     @livewireStyles
 </head>
-<body class="h-screen antialiased bg-no-repeat font-sans"
+<body class="h-auto antialiased bg-no-repeat font-sans"
       style="background-image: url('https://cdn.pixabay.com/photo/2021/10/02/09/18/airplane-6674689_960_720.jpg');
              background-size: cover">
 
-<div class="bg-blue-800 h-screen w-screen bg-opacity-80">
+<div class="bg-blue-800 h-auto pb-0.5 w-screen bg-opacity-80">
 
     @livewire('navigation.home.index-navi')
 

@@ -56,7 +56,7 @@
 
     <div
         :class="isSlide ? 'translate-x-0' : 'translate-x-96'"
-        class="w-72 absolute transform  transition duration-300 right-0 top-0 h-screen bg-white lg:hidden xl:hidden md:hidden ">
+        class="w-72 absolute transform z-10  transition duration-300 right-0 top-0 h-screen bg-white lg:hidden xl:hidden md:hidden ">
 
         <button
 
