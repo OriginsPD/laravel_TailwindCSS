@@ -5,35 +5,35 @@
 
     <x-navigation
         end="1">
-{{--        <x-slot name="mid">--}}
+        <x-slot name="mid">
 
-{{--            <x-navigation.center class="text-white">--}}
+            <x-navigation.center class="text-white">
 
-{{--                About Us--}}
+                About Us
 
-{{--            </x-navigation.center>--}}
+            </x-navigation.center>
 
-{{--                <x-dropdown.links class="text-white" title="Dropdown">--}}
+                <x-dropdown.links class="text-white" title="Dropdown">
 
-{{--                    <x-dropdown.href > link 1 </x-dropdown.href>--}}
-{{--                    <x-dropdown.href > link 1 </x-dropdown.href>--}}
-{{--                    <x-dropdown.href > link 1 </x-dropdown.href>--}}
+                    <x-dropdown.href > link 1 </x-dropdown.href>
+                    <x-dropdown.href > link 1 </x-dropdown.href>
+                    <x-dropdown.href > link 1 </x-dropdown.href>
 
-{{--                </x-dropdown.links>--}}
+                </x-dropdown.links>
 
-{{--            <x-navigation.center class="text-white">--}}
+            <x-navigation.center class="text-white">
 
-{{--                About Us--}}
+                About Us
 
-{{--            </x-navigation.center>--}}
+            </x-navigation.center>
 
-{{--            <x-navigation.center class="text-white">--}}
+            <x-navigation.center class="text-white">
 
-{{--                About Us--}}
+                About Us
 
-{{--            </x-navigation.center>--}}
+            </x-navigation.center>
 
-{{--        </x-slot>--}}
+        </x-slot>
 
         <x-slot name="end">
 
