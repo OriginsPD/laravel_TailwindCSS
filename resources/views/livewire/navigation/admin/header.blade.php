@@ -61,7 +61,7 @@
 
                     </a>
 
-                    <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg
+                    <a wire:click.prevent="logout" class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg
 
                      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 shadow "
 
@@ -75,23 +75,7 @@
 
                 <div class="sm:flex  md:flex lg:hidden">
 
-                    <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 " href="#">Search</a>
 
-                    <x-dropdown.dropNavi title="Links">
-
-                        <x-link.mega>
-                            <x-slot name="icon">
-
-                                <i class="fad fa-chart-network text-lg"></i>
-
-                            </x-slot>
-
-                            {{ __('Dashboard') }}
-
-                        </x-link.mega>
-
-
-                    </x-dropdown.dropNavi>
 
 
                 </div>

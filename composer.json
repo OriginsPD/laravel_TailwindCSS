@@ -15,15 +15,15 @@
         "livewire/livewire": "^2.7"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
-        ,
         "barryvdh/laravel-ide-helper": "^2.10",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
+        "laravel-shift/blueprint": "^2.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.8"
+        "phpunit/phpunit": "^9.5.8",
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {

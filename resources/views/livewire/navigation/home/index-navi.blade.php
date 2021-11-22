@@ -85,40 +85,7 @@
 
            <div class="p-3">
 
-               <x-form grid="1">
-
-                   <x-slot name="title">
-
-                       <h1 class="text-2xl font-semibold w-full text-center text-blue-700">
-
-                           Login
-
-                       </h1>
-
-                   </x-slot>
-
-                   <x-input.label label="Email">
-
-                       <x-input.text type="email"
-                                     :error="$errors->first('user.email')"/>
-
-                   </x-input.label>
-
-                   <x-input.label label="Password">
-
-                       <x-input.text type="password"
-                                     :error="$errors->first('user.password')"/>
-
-                   </x-input.label>
-
-                   <x-input.submit class="bg-blue-600 font-semibold">
-
-                       Login
-
-                   </x-input.submit>
-
-               </x-form>
-
+               @livewire('auth.login')
 
            </div>
 
