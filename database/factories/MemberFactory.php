@@ -25,8 +25,8 @@ class MemberFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'address' => $this->faker->word,
-            'phone_no' => $this->faker->numberBetween(-100000, 100000),
+            'address' => $this->faker->streetAddress(),
+            'phone_no' => '876'.$this->faker->numberBetween(3333333, 9999999),
         ];
     }
 }

@@ -27,11 +27,16 @@ class Addon extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'price' => 'double',
     ];
 
-
-    public function bookings()
+    public function books()
     {
-        return $this->hasMany(\App\Models\Booking::class);
+        return $this->hasMany(Book::class);
+    }
+
+    public function getPriceForHumanAttribute()
+    {
+        return number_format($this->price,2,'.');
     }
 }

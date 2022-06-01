@@ -18,12 +18,11 @@ class CreateVehiclesTable extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('weekly_fee');
-            $table->integer('daily_fee');
+            $table->double('weekly_fee', 8, 2);
+            $table->double('daily_fee', 8, 2);
             $table->text('transmission');
             $table->integer('capacity');
             $table->integer('baggage_space');
-            $table->text('feature')->nullable();
             $table->string('status')->default('0');
             $table->timestamps();
         });

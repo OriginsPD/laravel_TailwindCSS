@@ -1,0 +1,27 @@
+created:
+    - database/factories/MemberFactory.php
+    - database/factories/VehicleFactory.php
+    - database/factories/AddonFactory.php
+    - database/factories/BookFactory.php
+    - database/factories/FeatureFactory.php
+    - database/factories/BookaddonFactory.php
+    - database/migrations/2022_02_11_011529_create_members_table.php
+    - database/migrations/2022_02_11_011530_create_vehicles_table.php
+    - database/migrations/2022_02_11_011531_create_addons_table.php
+    - database/migrations/2022_02_11_011532_create_books_table.php
+    - database/migrations/2022_02_11_011533_create_features_table.php
+    - database/migrations/2022_02_11_011534_create_bookaddons_table.php
+    - app/Models/member.php
+    - app/Models/vehicle.php
+    - app/Models/addon.php
+    - app/Models/book.php
+    - app/Models/feature.php
+    - app/Models/bookaddon.php
+models:
+    User: { firstname: string, lastname: string, email: string, password: string }
+    member: { user_id: 'id foreign:user.id', address: string, phone_no: biginteger, relationships: { hasMany: book } }
+    vehicle: { name: string, weekly_fee: 'double:8,2', daily_fee: 'double:8,2', transmission: text, capacity: integer, baggage_space: integer, status: 'boolen default:0' }
+    addon: { name: string, description: text, price: 'double:8,2', relationships: { hasMany: book } }
+    book: { member_id: 'id foreign:member.id', vehicle_id: 'id foreign:vehicle.id', pickup_location: text, pickup_date: 'date useCurrent', dropoff_location: text, dropoff_date: 'date useCurrent', relationships: { hasMany: member } }
+    feature: { name: string, vehicle_id: 'id foreign:vehicle.id', relationships: { hasMany: vehicle } }
+    bookaddon: { book_id: 'id foreign:book.id', addon_id: 'id foreign:addon.id', relationships: { hasMany: book } }

@@ -2,6 +2,7 @@
 
 
     <footer class="bg-purple-700 dark:bg-purple-800">
+
         <div class="container px-6 py-4 mx-auto">
             <div class="lg:flex">
                 <div class="w-full -mx-6 lg:w-2/5">

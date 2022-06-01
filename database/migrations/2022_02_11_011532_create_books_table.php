@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddonsTable extends Migration
+class CreateBooksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,14 @@ class CreateAddonsTable extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('addons', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->integer('price');
+            $table->foreignId('member_id')->constrained('members','id');
+            $table->foreignId('vehicle_id')->constrained('vehicles','id');
+            $table->text('pickup_location');
+            $table->date('pickup_date')->useCurrent();
+            $table->text('dropoff_location');
+            $table->date('dropoff_date')->useCurrent();
             $table->timestamps();
         });
 
@@ -33,6 +36,6 @@ class CreateAddonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('addons');
+        Schema::dropIfExists('books');
     }
 }

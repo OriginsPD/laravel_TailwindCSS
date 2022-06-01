@@ -25,7 +25,7 @@ class AddonFactory extends Factory
         return [
             'name' => $this->faker->name,
             'description' => $this->faker->text,
-            'price' => $this->faker->numberBetween(-10000, 10000),
+            'price' => $this->faker->randomFloat(2, 10, 99.99),
         ];
     }
 }

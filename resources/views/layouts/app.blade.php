@@ -1,37 +1,34 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> {{ config('app.name','Halftime Car Rental') }} </title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/scroll.css') }}">
-    <link href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css" rel="stylesheet">
-    <link href='https://unpkg.com/css.gg/icons/all.css' rel='stylesheet'>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
 </head>
-<body class="h-auto antialiased bg-no-repeat font-sans"
-      style="background-image: url('https://cdn.pixabay.com/photo/2021/10/02/09/18/airplane-6674689_960_720.jpg');
-             background-size: cover">
+<body>
 
-<div class="bg-blue-800 h-auto pb-0.5 w-screen bg-opacity-80">
+<div>
 
-    @livewire('navigation.home.index-navi')
+    @livewire('navigation.home.main')
 
-    @yield('content')
+    <div class="space-y-4">
+
+        {{ $slot }}
+
+        <livewire:home.features.footer />
+
+    </div>
+
 
 </div>
 
-<!-- Footer End of Body -->
 @livewireScripts
-<script defer src="https://unpkg.com/@alpinejs/trap@3.x.x/dist/cdn.min.js"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

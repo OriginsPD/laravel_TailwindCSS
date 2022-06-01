@@ -1,0 +1,51 @@
+models:
+  member:
+    user_id: id foreign:user.id
+    address: string
+    phone_no: biginteger
+    relationships:
+      hasMany: book
+
+  vehicle:
+    name: string
+    weekly_fee: double:8,2
+    daily_fee: double:8,2
+    transmission: text
+    capacity: integer
+    baggage_space: integer
+    status: boolen default:0
+
+  addon:
+    name: string
+    description: text
+    price: double:8,2
+    relationships:
+      hasMany: book
+
+
+  book:
+    member_id: id foreign:member.id
+    vehicle_id: id foreign:vehicle.id
+    pickup_location: text
+    pickup_date: date useCurrent
+    dropoff_location: text
+    dropoff_date: date useCurrent
+    relationships:
+      hasMany: member
+
+  feature:
+    name: string
+    vehicle_id: id foreign:vehicle.id
+    relationships:
+      hasMany: vehicle
+
+  bookaddon:
+    book_id: id foreign:book.id
+    addon_id: id foreign:addon.id
+    relationships:
+      hasMany: book
+
+
+
+
+

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
+class Bookaddon extends Model
 {
     use HasFactory;
 
@@ -15,14 +15,8 @@ class Booking extends Model
      * @var array
      */
     protected $fillable = [
-        'member_id',
+        'book_id',
         'addon_id',
-        'pickup_location',
-        'pickup_date',
-        'pickup_time',
-        'dropoff_location',
-        'dropoff_date',
-        'dropoff_time',
     ];
 
     /**
@@ -32,20 +26,22 @@ class Booking extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'member_id' => 'integer',
+        'book_id' => 'integer',
         'addon_id' => 'integer',
-        'pickup_date' => 'date',
-        'dropoff_date' => 'date',
     ];
 
-
-    public function member()
+    public function books()
     {
-        return $this->belongsTo(\App\Models\Member::class);
+        return $this->hasMany(Book::class);
+    }
+
+    public function book()
+    {
+        return $this->belongsTo(Book::class);
     }
 
     public function addon()
     {
-        return $this->belongsTo(\App\Models\Addon::class);
+        return $this->belongsTo(Addon::class);
     }
 }

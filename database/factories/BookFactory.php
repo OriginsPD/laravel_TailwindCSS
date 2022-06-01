@@ -4,18 +4,18 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Addon;
 use App\Models\Member;
-use App\Models\booking;
+use App\Models\Vehicle;
+use App\Models\book;
 
-class BookingFactory extends Factory
+class BookFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Booking::class;
+    protected $model = Book::class;
 
     /**
      * Define the model's default state.
@@ -26,13 +26,11 @@ class BookingFactory extends Factory
     {
         return [
             'member_id' => Member::factory(),
-            'addon_id' => Addon::factory(),
-            'pickup_location' => $this->faker->text,
+            'vehicle_id' => Vehicle::factory(),
+            'pickup_location' => $this->faker->address(),
             'pickup_date' => $this->faker->date(),
-            'pickup_time' => $this->faker->word,
-            'dropoff_location' => $this->faker->text,
+            'dropoff_location' => $this->faker->address(),
             'dropoff_date' => $this->faker->date(),
-            'dropoff_time' => $this->faker->word,
         ];
     }
 }

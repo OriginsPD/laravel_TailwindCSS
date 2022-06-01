@@ -23,14 +23,13 @@ class VehicleFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'weekly_fee' => $this->faker->numberBetween(-10000, 10000),
-            'daily_fee' => $this->faker->numberBetween(-10000, 10000),
+            'name' => $this->faker->firstName().' '.$this->faker->lastName(),
+            'weekly_fee' => $this->faker->randomFloat(2, 1000, 9999.99),
+            'daily_fee' => $this->faker->randomFloat(2, 50, 999.99),
             'transmission' => $this->faker->text,
-            'capacity' => $this->faker->numberBetween(-10000, 10000),
-            'baggage_space' => $this->faker->numberBetween(-10000, 10000),
-            'feature' => $this->faker->text,
-            'status' => $this->faker->word,
+            'capacity' => $this->faker->numberBetween(4, 8),
+            'baggage_space' => $this->faker->numberBetween(3, 12),
+            'status' => random_int(0,1),
         ];
     }
 }

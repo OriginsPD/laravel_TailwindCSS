@@ -31,14 +31,13 @@ class Member extends Model
         'phone_no' => 'integer',
     ];
 
-
-    public function bookings()
+    public function books()
     {
-        return $this->hasMany(\App\Models\Bookings::class);
+        return $this->hasMany(Book::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(\App\Models\User::class);
+        return $this->belongsTo(User::class);
     }
 }

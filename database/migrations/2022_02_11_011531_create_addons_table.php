@@ -19,7 +19,7 @@ class CreateAddonsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->integer('price');
+            $table->double('price', 8, 2);
             $table->timestamps();
         });
 

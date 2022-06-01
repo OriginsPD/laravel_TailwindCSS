@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVehiclesTable extends Migration
+class CreateBookaddonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,16 +15,10 @@ class CreateVehiclesTable extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('vehicles', function (Blueprint $table) {
+        Schema::create('bookaddons', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('weekly_fee');
-            $table->decimal('daily_fee', 8, 2);
-            $table->text('transmission');
-            $table->integer('capacity');
-            $table->integer('baggage_space');
-            $table->text('feature')->nullable();
-            $table->string('status')->default('0');
+            $table->foreignId('book_id')->constrained('books','id');
+            $table->foreignId('addon_id')->constrained('addons','id');
             $table->timestamps();
         });
 
@@ -38,6 +32,6 @@ class CreateVehiclesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicles');
+        Schema::dropIfExists('bookaddons');
     }
 }
